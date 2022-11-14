@@ -1,0 +1,93 @@
+.login{
+    /* border:3px solid green; */
+    /* display:inline-block; */
+    width:40%;
+    margin:60px auto;
+    padding:3px 5px;
+}
+/* .login{
+    /* border:3px solid red; */
+    /* background-color: rgb(23, 102, 199);
+    padding:3px 3px;
+    margin:40px 15px;
+} */ 
+.input{
+    margin:20px 0px;
+    padding:3px 3px;
+}
+#enrollmentnumber{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+#password1{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+.containfooter{
+    
+    margin:6px 3px;
+    padding:3px 3px;
+}
+.list{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+.list a{
+    text-decoration: none;
+}
+.list a:hover{
+    color:rgb(226, 135, 135)
+}
+#userida{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+#password3{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+#useridt{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+#password2{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius: 5px;
+    margin:6px 0px;
+    padding:3px 3px;
+}
+.input input{
+    border-radius: 8px;
+    width:100%;
+    text-align: center;
+    border:none;
+}
+.input input:hover{
+   border:none;
+   font-size: small;
+}
