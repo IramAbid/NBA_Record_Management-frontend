@@ -1,11 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin:0px;
-    padding:0px;
-    font-family: 'Lucida Sans';
-    font-weight: 500;
-    color:black;
-}
+
 .background{
     background-color: rgb(128, 128, 179);
     padding:30px 30px;
@@ -95,14 +88,14 @@
     resize:none;
     border-radius:8px;
 }
-.input input{
+/* .input input{
     width:300px;
     padding:3px 3px;
     border-radius: 8px;
 }
 input:hover{
     border:1px solid black;
-}
+} */
 .basicdetails{
     margin:3px 3px;
     padding: 3px 3px;

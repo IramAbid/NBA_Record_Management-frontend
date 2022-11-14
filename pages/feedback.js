@@ -1,5 +1,5 @@
-import styles from '../../styles/Feedback.module.css'
-const feedback=()=>{
+import styles from "../styles/Feedback.module.css"
+export default function  feedback(){
   return(
     <div>
       <div className={styles.form}>
@@ -133,7 +133,7 @@ const feedback=()=>{
               </div>
             </div>
             <div className={styles.innerbox}>
-            <div class={stylesinnerboxdetail}>CO3. Describe computer and network security fundamental concepts and principles.</div>
+            <div class={styles.innerboxdetail}>CO3. Describe computer and network security fundamental concepts and principles.</div>
               <div className={styles.radiobox}>
               <div className={styles.radio1}>
               
@@ -394,7 +394,7 @@ const feedback=()=>{
                 
               </div>
               <div className={styles.innerbox}>
-                <div className={styles.innerboxdetail}>8. The teacher's attitude towards the students is friendly and helpful.</div>
+                <div className={styles.innerboxdetail}>8. The teachers attitude towards the students is friendly and helpful.</div>
                 <div className={styles.radiobox}>
                   <div className={styles.radio}>
                     <input type="radio" value="1" id="rate1"/>

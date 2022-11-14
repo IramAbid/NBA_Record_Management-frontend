@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Login from '../pages/login.js'
 import styles from '../styles/Home.module.css'
+import Navbar from "../component/Navbar"
+import Hero from "../component/Hero"
 
 
 
@@ -14,8 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         
       </Head>
-      <h1>this is index home opage</h1>
-      <h2>this page is edited by iram</h2>
+      <Navbar/>
+      <Hero/>
+
     </div>
   )
 }
