@@ -1,93 +1,47 @@
-.login{
-    /* border:3px solid green; */
-    /* display:inline-block; */
-    width:40%;
-    margin:60px auto;
-    padding:3px 5px;
-}
-/* .login{
-    /* border:3px solid red; */
-    /* background-color: rgb(23, 102, 199);
-    padding:3px 3px;
-    margin:40px 15px;
-} */ 
-.input{
-    margin:20px 0px;
-    padding:3px 3px;
-}
-#enrollmentnumber{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
-}
-#password1{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
-}
-.containfooter{
-    
-    margin:6px 3px;
-    padding:3px 3px;
-}
-.list{
+.login_container{
     display:flex;
-    justify-content:space-between;
-    flex-wrap: wrap;
-    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
 
+.login_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width:40%;
+    border:1px solid black;
+    border-radius: 20px;
+    padding:20px;
+    
 }
-.list a{
+.login_form input{
+    margin-top: 10px;
+   
+    border-radius: 6px;
+    padding:2px 10px;
+    
+}
+.login_form label{
+    margin-top: 18px;
+}
+.login_form button{
     text-decoration: none;
+    margin-top: 15px;
+    background-color: black;
+    color:azure;
+    padding:5px 25px;
+    border-radius:20px;
 }
-.list a:hover{
-    color:rgb(226, 135, 135)
+.login_form button:hover{
+    background-color: rgb(15, 15, 15);
+    color:bisque
 }
-#userida{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
+.login_form h5{
+    margin-top: 10px;
 }
-#password3{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
-}
-#useridt{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
-}
-#password2{
-    display:block;
-    width:100%;
-    border:none;
-    border-radius: 5px;
-    margin:6px 0px;
-    padding:3px 3px;
-}
-.input input{
-    border-radius: 8px;
-    width:100%;
-    text-align: center;
-    border:none;
-}
-.input input:hover{
-   border:none;
-   font-size: small;
+.Link{
+    text-decoration: none;
+    font-weight: lighter;
 }

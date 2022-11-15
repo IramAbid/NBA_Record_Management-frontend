@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from "../component/Navbar"
 import Hero from "../component/Hero"
+import Footer from "../component/Footer"
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <Navbar/>
       <Hero/>
+      <Footer/>
 
     </div>
   )

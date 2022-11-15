@@ -1,0 +1,37 @@
+.basicdetailscontainer{
+    display:flex;
+    flex-direction: column;
+}
+.basicdetailscontainer h2{
+    padding-top: 10px;
+    text-align: center;
+}
+.basicdetailscontainer h4{
+    padding-top: 10px;
+    text-align: center;
+    font-size: large;
+}
+.basicdetailscontainer p{
+    text-align: center;
+    font-style: italic;
+    padding-top: 10px;
+}
+.coursedetail{
+    display:flex;
+    margin:10px 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.coursedetail input{
+    border-radius: 10px;
+    padding:2px 10px;
+    margin-left: 8px;
+    width:350px;
+    margin-bottom: 6px;
+}
+@media screen and (max-width: 600px) {
+    
+    .coursedetail{
+        justify-content: center;
+    }
+  }

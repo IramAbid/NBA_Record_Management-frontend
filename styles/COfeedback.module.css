@@ -1,0 +1,17 @@
+.co_container{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.co_container h3{
+   padding:10px 25px;
+    font-weight: 100px;
+}
+.co_container p{
+    padding:8px 30px;
+    
+    font-weight: 100px;
+}
+.co_container input{
+    margin-left: 75px;
+}

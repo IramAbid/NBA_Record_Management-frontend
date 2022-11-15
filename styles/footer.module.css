@@ -1,0 +1,9 @@
+.my_footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    background-color: black;
+    height:60px;
+    width:100%;
+
+}

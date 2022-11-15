@@ -19,6 +19,9 @@
     color: azure;
     text-decoration: none;
 }
+.menubar a:hover{
+    color:bisque;
+}
 
 
 @media screen and (max-width: 600px) {
