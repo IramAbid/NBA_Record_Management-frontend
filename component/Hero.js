@@ -15,7 +15,7 @@ const Hero = () => {
                 <div><Link  href="/login"><button>STUDENT</button></Link></div>
                 <div><Link  href="/login"><button>TEACHER</button></Link></div>
                 <div><Link  href="/login"><button>ADMIN</button></Link></div>
-                <div><Link  href="/feedback"><button>HELP</button></Link></div>
+                <div><Link  href="/feedback"><button>FEEDBACK</button></Link></div>
             </div>
 
         </div>
