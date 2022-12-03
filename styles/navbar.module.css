@@ -1,26 +1,35 @@
 .my_navbar{
+    position: sticky;
+    top: 0;
     width: 100vw;
-    height: 50px;
+    height: 8vh;
     background-color: black;
-    color: azure;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
 }
+.my_navbar h3{
+    cursor: pointer; 
+}
+.my_navbar h3:hover{
+    opacity: .6;
+}
 .menubar{
+    font-size: 14px;
     padding-right: 20px;
     display: flex;
-    color: wheat; 
+    color: white; 
     gap: 30px;
 }
 
 .menubar a{
-    color: azure;
+    color: white;
     text-decoration: none;
 }
 .menubar a:hover{
-    color:bisque;
+    opacity: .6;
 }
 
 

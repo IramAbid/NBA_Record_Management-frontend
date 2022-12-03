@@ -10,7 +10,7 @@ export default function Register() {
   
   const HandleSubmit=(email, password)=>{
     const router=useRouter();
-    router.push("login.js");
+    // router.push("login.js");
     console.log("account created");
   }
     return (
@@ -30,10 +30,6 @@ export default function Register() {
           <input type="password" value={password} name="password" id="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} required/>
          
           <button type="submit">CREATE ACCOUNT</button>
-          
-          
-          
-          
           </form>
           
 

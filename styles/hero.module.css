@@ -1,4 +1,5 @@
 .hero_container{
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,7 @@
 }
 
 .details{
+    width: 70%;
     text-align: center;
     margin-top: 30px;
     padding: 0 100px;
@@ -22,19 +24,20 @@
 .button_container{
     display:flex;
     gap: 40px;
-    padding-top: 30px;
+    padding-top: 60px;
     flex-wrap: wrap;
 }
-.button_container button{
+.button_container a{
     text-decoration: none;
 
     background-color: black;
-    color:azure;
+    color:white;
     padding:5px 25px;
     border-radius:20px;
 
 }
-.button_container button:hover{
-    background-color: rgb(15, 15, 15);
-    color:bisque
+.button_container a:hover{
+    background-color: white;
+    color:black;
+    border: 1.5px solid black;
 }

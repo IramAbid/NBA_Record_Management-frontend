@@ -1,27 +1,28 @@
 import styles from "../styles/navbar.module.css"
+import Link from "next/link"
 
 const Navbar = () => {
-  return (
-    <nav className={styles.my_navbar}>
-        <div>
-            ALIGARH MUSLIM UNIVERSITY
-        </div>
-        <div className={styles.menubar}>
+    return (
+        <nav className={styles.my_navbar}>
             <div>
-                <a href="#"> ABOUT </a>
+                <Link href="/"><h3>ALIGARH MUSLIM UNIVERSITY</h3></Link>
             </div>
-            <div>
-                <a href="#"> USEFUL DOWNLOADS</a>
+            <div className={styles.menubar}>
+                <div>
+                    <Link href="/about">About</Link>
+                </div>
+                <div>
+                    <Link href="/useful-downloads">Useful Downloads</Link>
+                </div>
+                <div>
+                    <Link href="/notices">Notices</Link>
+                </div>
+                <div>
+                    <Link href="/contacts">Contact</Link>
+                </div>
             </div>
-            <div>
-                <a href="#"> CONTACT US</a>
-            </div>
-            <div>
-                <a href="#"> NOTICES</a>
-            </div>
-        </div>
-    </nav>
-  )
+        </nav>
+    )
 }
 
 export default Navbar
