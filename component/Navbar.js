@@ -18,7 +18,7 @@ const Navbar = () => {
                     <Link href="/notices">Notices</Link>
                 </div>
                 <div>
-                    <Link href="/contacts">Contact</Link>
+                    <Link href="/contactus">Contact</Link>
                 </div>
             </div>
         </nav>
