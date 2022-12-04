@@ -1,6 +1,4 @@
-
 import Basicdetailsfeedback from "../../component/Basicdetailsfeedback"
-
 const Feedback = () => {
   return(
       <div>
