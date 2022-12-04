@@ -8,7 +8,8 @@ export default function ContactUs() {
     return (
         <div className={styles.contactus_container}>
             <div className={styles.contactus_form}>
-                <p>Get in touch</p>
+                <div className={styles.contactus_form_content}>
+                <h5>Get in touch</h5>
                 <form>
                 <div className={styles.contactus_component}>
                     <input type="text" name="name" placeholder="Name" />
@@ -23,29 +24,28 @@ export default function ContactUs() {
                     <textarea name="message" placeholder="Message"/>
                 </div>
                 <div className={styles.contactus_component_button}>
-                <input type="submit" value="Send Message"/>
+                <input type="submit" value="Send "/>
                 </div>
                 </form>
-
+                </div>
             </div>
             <div className={styles.contactus}>
-             <p>Contact Us</p>
+             <h4>Contact Us</h4>
              <div className={styles.component}>
                 <AddressIcon/>
-                <h4>Address:</h4><p>ZHCET, AMU Aligarh</p>
+                <p> <strong>Address:</strong> ZHCET, AMU, Aligarh</p>
              </div>
-             
              <div className={styles.component}>
              <PhoneIcon/>
-                <h4>Phone:</h4><p>1234567896</p>
-             </div>
-             <div className={styles.component}>
+                <p> <strong>Phone  :</strong> 9838352836</p>
+             </div >
+             <div className={styles.component} >
                 <EmailIcon/>
-                <h4>Email:</h4><p>mail@gmail.com</p>
+                <p><strong>Email   :</strong> NBAmail@gmail.com</p>
              </div>
              <div className={styles.component}>
                 <WebsiteIcon/>
-                <h4>Website:</h4><p>nba.com</p>
+                <p> <strong>Website  :</strong> NBA_RECORD.com</p>
              </div>
             </div>
 
