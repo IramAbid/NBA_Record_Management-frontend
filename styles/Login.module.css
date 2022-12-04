@@ -1,61 +1,153 @@
+
+
 .login_page{
     width: 100%;
     min-height: 100vh;
     display: flex;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
+}
+.image{
+    width:50vw;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgb(0,0,0,0.3);
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 0px 1px;
+}
+.image img{
+    text-align: center;
+    justify-content: center;
+    margin-top: 200px;
+    
+}
+.login_container{
+    width: 50vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: rgb(0,0,0,0.3); 
+    align-items: center;
+
+    
+}
+.login_mainbox{
+    margin-top: 80px;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    margin-left: 160px;
+    height: 600px;
 }
+.login_container img{
+    padding: auto;
+    justify-content: center;
+    text-align: center;
+
+}
+
 .login_page p{
     font-size: 20px;
     font-weight: 500;
     color: #333;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .login_box{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    padding: 20px;
-    width: 300px;
-    min-height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 20px ;
+    width: 420px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    border-radius: 13px;
+    margin-top: 30px;
+}
+.login_box h3{
+    text-align: center;
+    color:black;
+    font-weight: 500;
+   
+}
+.AMU_name{
+    color:green;
+    font-weight: 490;
+    font-size: 15px;
+}
+.login_component h5{
+    margin-bottom: -3px;
+    color:blue;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: right;
+
+}
+.login_component h5:hover{
+    color:green;
+}
+.Register{
+    margin-top: 3px;
+}
+.Register strong{
+    color:red;
+}
+.Register strong:hover{
+    color:green;
+}
+.login_component h6{
+    color:black;
+    font-size: 14px;
+    font-weight: 500;
 }
 .logo{
-    width: 30%;
-    height: 30%;
+margin-top: 30px;
+    width: 60%;
+    height:60%;
+    align-items: center;
+    text-align: center;
 }
+
 .logo img{
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
 }
 .login_component{ 
-    width: 80%;
+    width: 70%;
+    color:rgba(60, 64, 67, 0.15);
 }
 .login_component_button{
-    width: 80%;
-    margin-top: 15px;
+    width: 70%;
+    margin-top: 12px;
+    
 }
 .login_component_button input{
-    cursor: pointer;
     border-radius: 2px;
     width: 100%;
     background-color: black;
     color: white;
     border: none;
     padding: 7px;
+    border-radius: 3px;
+
 }
 .login_component_button input:hover{
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+    color:white;
+    background-color:#bd524b;
+    border: 1.5px solid black;
+    cursor: hand;
+    
 }
 .login_component input{
     margin: 10px auto;
     border: 1px solid black;
+    border-radius: 20px;
     padding-left: 10px;
-    border-radius: 2px;
+    border-radius: 3px;
     width: 100%;
     height: 30px;
 }

@@ -29,6 +29,66 @@
     width:350px;
     margin-bottom: 6px;
 }
+.co_container{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.co_container h3{
+   padding:10px 25px;
+    font-weight: 100px;
+}
+.co_container p{
+    padding:8px 30px;
+    
+    font-weight: 100px;
+}
+.co_container input{
+    margin-left: 75px;
+}
+
+.commmonfeedback_container{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.commonfeedback_container h3{
+   
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-top: 20px;
+   font-weight: 100px;
+}
+.commonfeedback_container p{
+    padding:8px 30px;
+    font-weight: 100px;
+}
+.commonfeedback_container input{
+    margin-left: 75px;
+}
+.commonfeedback_container textarea{
+    margin:5px 40px;
+    width: 90%;
+    height:150px;
+    border-radius: 15px;
+    padding:8px 10px;
+    font-size: larger;
+}
+.commonfeedback_container button{
+    text-decoration: none;
+    margin-top: 8px;
+    background-color: black;
+    color:azure;
+    padding:5px 25px;
+    border-radius:20px;
+    margin-left: 60px;
+    margin-bottom: 75px;
+}
+
+.commonfeedback_container button:hover{
+    background-color: rgb(15, 15, 15);
+    color:bisque
+}
 @media screen and (max-width: 600px) {
     
     .coursedetail{

@@ -77,21 +77,32 @@ const handleInputChange = (e) => {
 
 
     <div className={styles.login_page}>
+      <div className={styles.image}>
+       <centre> <img src='/students2_withoutbg.png' alt="student image"></img></centre>
+      </div>
       <div className={styles.login_container}>
-        <form onSubmit={UserLogin} className={styles.login_box}>
-          <div className={styles.logo}>
-            <img src="/logo.jpeg" alt="logo" />
-          </div>
-          <div className={styles.login_component}>
+        <div className={styles.login_mainbox}>
+          <form onSubmit={UserLogin} className={styles.login_box}>
+            <div className={styles.logo}>
+            <img src="/amulogo.svg" alt="logo" />
+            <h5 className={styles.AMU_name}>ALIGARH MUSLIM UNIVERSITY</h5>
+            </div>
+            <div className={styles.login_component}>
+            <h3>STUDENT'S LOGIN</h3>
+            <h6>Enter your email</h6>
             <input type="email" name='email' value={values.email} placeholder='email' onChange={handleInputChange} />
-          </div>
-          <div className={styles.login_component}>
+            </div>
+            <div className={styles.login_component}>
+            <h6>Enter your password</h6>
             <input type="password" placeholder='password' value={values.password} onChange={handleInputChange} name="password" autoComplete=''/>
-          </div >
-          <div className={styles.login_component_button}>
+            <h5 className={styles.forgotpassword}>Forgot password?</h5>
+            </div >
+            <div className={styles.login_component_button}>
             <input type='submit' value="Login" />
+            <h6 className={styles.Register} >Don't have an account?<strong> Register Here</strong></h6>
           </div>
         </form>
+      </div>
       </div>
     </div>
 

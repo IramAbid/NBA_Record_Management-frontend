@@ -4,21 +4,21 @@ import Link from "next/link"
 const Navbar = () => {
     return (
         <nav className={styles.my_navbar}>
-            <div>
+            <div class="logo">
                 <Link href="/"><h3>ALIGARH MUSLIM UNIVERSITY</h3></Link>
             </div>
             <div className={styles.menubar}>
                 <div>
-                    <Link href="/about">About</Link>
+                    <Link href="/notices">NOTICES AND CIRCULARS</Link>
                 </div>
                 <div>
-                    <Link href="/useful-downloads">Useful Downloads</Link>
+                    <Link href="/useful-downloads">USEFUL DOWNLOADS</Link>
                 </div>
                 <div>
-                    <Link href="/notices">Notices</Link>
+                    <Link href="/about">ABOUT US</Link>
                 </div>
                 <div>
-                    <Link href="/contacts">Contact</Link>
+                    <Link href="/contacts">CONTACT</Link>
                 </div>
             </div>
         </nav>
