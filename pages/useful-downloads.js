@@ -7,35 +7,39 @@ export default function Notices(){
             <div className={styles.box}>
                 <div className={styles.downloads_box}>
                     <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Download the End Sementer Examination Scheme.</Link>
+                    <a href="/OE.pdf" download> <h3>Download</h3></a>
+                    <Link href="/OE.pdf" >End Sementer Examination Scheme.</Link>
                 </div>
                 <div className={styles.downloads_box}>
                 <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Download Admit Card for End Semester Examination.</Link>
+
+                    <a href="/OE.pdf" download> <h3>Download</h3></a>
+                    <Link href="/OE.pdf" download> Admit Card for End Semester Examination.</Link>
                 </div>
                 <div className={styles.downloads_box}>
                 <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Guidelines for students for NBA visit</Link>
+                    <a href="/OE.pdf" download> <h3>Download</h3></a>
+                    <Link href="/odd sem.pdf">Guidelines for students for NBA visit</Link>
                     </div>
             </div>
             <div className={styles.box}>
                 <div className={styles.downloads_box}>
                 <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Download Mid Semester Examination Scheme</Link>
+                    
+                    <a href="/odd sem.pdf" download> <h3>Download</h3></a>
+                    <Link href="odd sem.pdf#">Mid Semester Examination Scheme</Link>
                 </div>
                 <div className={styles.downloads_box}>
                 <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Seating Arragngement for Mid Semester Examination</Link>
+    
+                    <a href="/odd sem.pdf" download> <h3>Download</h3></a>
+                    <Link href="odd sem.pdf">Seating Arragngement for Mid Semester Examination</Link>
                     </div>
                 <div className={styles.downloads_box}>
                 <DownloadIcon/>
-                    <h3>Download</h3>
-                    <Link href="#">Download the registration card for odd semester.</Link>
+                    
+                    <a href="/odd sem.pdf" download> <h3>Download</h3></a>
+                    <Link href="/odd sem.pdf"> the registration card for odd semester.</Link>
                     </div>
             </div>
         </div>

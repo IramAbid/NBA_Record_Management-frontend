@@ -25,6 +25,9 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .text_box p{
     text-align: justify;

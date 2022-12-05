@@ -1,3 +1,5 @@
+
+
 import styles from "../styles/Basicdetailsfeedback.module.css"
 const Basicdetailsfeedback = () => {
     return(
@@ -11,6 +13,7 @@ const Basicdetailsfeedback = () => {
             <h3>I. Indicate how well you feel this Course provides you with an opportunity to learn the following Course Outcomes (COs): I have an ability to: </h3>
             <form>
                 <p>CO1. Describe computer and neywork security fundamental concepts and principles.</p>
+    
             <label for="CO1">
             <input type="radio" value="1" name="CO1"/>1.
             </label>
