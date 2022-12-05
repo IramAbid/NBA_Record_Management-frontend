@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 
 const DasboardLeft = () => {
   const router= useRouter()
-  const { user, setUser } = useUserContext()
+  const { admin, setAdmin } = useUserContext()
   let body = {
-    token: user?.token.token
+    token: admin?.token.token
   }
   const UserLogout = () => {
     // e.preventDefault();
@@ -21,14 +21,14 @@ const DasboardLeft = () => {
       body: JSON.stringify(body)
     }
 
-    fetch("http://localhost:8081/studentlogout", reqOptions)
+    fetch("http://localhost:8081/admin/logout", reqOptions)
       .then((response) => response.json())
       .then((response)=>{
         if(response.err){
           console.log(response.err)
         }else{
-          setUser(null)
-          localStorage.removeItem("user")
+          setAdmin(null)
+          localStorage.removeItem("admin")
           router.push("/")
         }
       })
@@ -41,7 +41,7 @@ const DasboardLeft = () => {
         <div>
           <div className={styles.component}>
             <DashboardIcon />
-            <Link href="/student/dashboard">Dashboard</Link>
+            <Link href="/admin/dashboard">Dashboard</Link>
           </div>
 
           <div className={styles.component}>

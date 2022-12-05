@@ -4,19 +4,29 @@ export const UserContext = createContext();
 export const UserContextProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [admin, setAdmin] = useState(null);
+    const [feedbackData, setFeedbackData] = useState(null);
+    const [dashboardStatus, setDashboardStatus]= useState(0)
     
-    const [signUpRequired, setSignUpRequired] = useState(false);
+    // const [signUpRequired, setSignUpRequired] = useState(false);
 
     useEffect(() => {
         const userParsed = JSON.parse(localStorage.getItem("user"));
+        const adminParsed = JSON.parse(localStorage.getItem("admin"));
         if(userParsed){
             setUser(userParsed)
             console.log("current User", user?.user.last_name)
         }else{
             setUser(null)
         }
+        if(adminParsed){
+            setAdmin(adminParsed)
+        }else{
+            setAdmin(null)
+        }
         return()=>{
             setUser(null)
+            setAdmin(null)
         }
     },[]);
 
@@ -25,6 +35,12 @@ export const UserContextProvider = ({ children }) => {
             value={{
                 user,
                 setUser,
+                dashboardStatus,
+                setDashboardStatus,
+                feedbackData,
+                setFeedbackData,
+                admin,
+                setAdmin
 
             }}
         >

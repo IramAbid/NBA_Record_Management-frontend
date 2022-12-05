@@ -1,11 +1,17 @@
 import styles from '../../styles/Login.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useUserContext } from '../../context/UserContext'
 export default function Login() {
-  const {setUser}= useUserContext();
+  const {setUser, user}= useUserContext();
   const [loading, setLoading] = useState(false)
-  const router= useRouter();
+  const router= useRouter(); 
+
+  useEffect(()=>{
+    if(user){
+      router.push('/student/dashboard')
+    }
+  })
 
   const [values, setValues] = useState({
     email: "",
@@ -42,8 +48,13 @@ const handleInputChange = (e) => {
           // })
 
         } else {
-          setUser(response.data)
-          localStorage.setItem("user", JSON.stringify(response.data))
+          var sanitisedUser= {
+            ...response.data,
+            accessLevel: 1
+        }
+        console.log("sanitised user", sanitisedUser)
+          setUser(sanitisedUser)
+          localStorage.setItem("user", JSON.stringify(sanitisedUser))
           console.log("your data is : ", response)
           // setToken(response.data.token.token)
           // setUser(response.data.user)
@@ -79,6 +90,7 @@ const handleInputChange = (e) => {
     <div className={styles.login_page}>
       <div className={styles.login_container}>
         <form onSubmit={UserLogin} className={styles.login_box}>
+          
           <div className={styles.logo}>
             <img src="/logo.jpeg" alt="logo" />
           </div>

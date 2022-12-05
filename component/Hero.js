@@ -13,8 +13,7 @@ const Hero = () => {
             </div>
             <div className={styles.button_container}>
                 <div><Link href="/student/login">STUDENT</Link></div>
-                <div><Link href="/teacher/login">TEACHER</Link></div>
-                <div><Link href="/login">ADMIN</Link></div>
+                <div><Link href="/admin/login">ADMIN</Link></div>
                 <div><Link href="/feedback">FEEDBACK</Link></div>
             </div>
 
