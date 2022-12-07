@@ -2,6 +2,18 @@ import styles from '../../styles/Login.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useUserContext } from '../../context/UserContext'
+import notie from 'notie'
+import Head from 'next/head'
+
+export const data = [
+  ["Element", "Density", { role: "style" }],
+  ["Copper", 8.94, "#b87333"], // RGB value
+  ["Silver", 10.49, "silver"], // English color name
+  ["Gold", 19.3, "gold"],
+  ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
+];
+
+
 export default function Login() {
   const {setUser, user}= useUserContext();
   const [loading, setLoading] = useState(false)
@@ -33,19 +45,16 @@ const handleInputChange = (e) => {
       body: JSON.stringify(values)
     }
 
-
-
-    console.log("I am ran")
     fetch("http://localhost:8081/student/login", reqOptions)
       .then((response) => response.json())
       .then((response) => {
         if (response.error) {
           console.log("Error :", response.message)
-          // notie.alert({
-          //   type: "error",
-          //   message: response.error.message,
-          //   position: "bottom",
-          // })
+          notie.alert({
+            type: 3,
+            text: response.error.message,
+            position:"top"
+          })
 
         } else {
           var sanitisedUser= {
@@ -55,27 +64,12 @@ const handleInputChange = (e) => {
         console.log("sanitised user", sanitisedUser)
           setUser(sanitisedUser)
           localStorage.setItem("user", JSON.stringify(sanitisedUser))
-          console.log("your data is : ", response)
-          // setToken(response.data.token.token)
-          // setUser(response.data.user)
-          // notie.alert({
-          //   type: 'success',
-          //   message: "logged in successfully",
-          //   position: "bottom",
-          // })
+          notie.alert({
+            type: 1,
+            position:"top",
+            text: "logged in successfully",
+          })
 
-          // save info to cookie
-          // let date = new Date();
-          // let expDays = 1;
-          // date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-          // const expires = "expires=" + date.toUTCString();
-
-          // // set the cookie
-          // document.cookie = "_site_data="
-          //   + JSON.stringify(response.data)
-          //   + "; "
-          //   + expires
-          //   + "; path=/; SameSite=strict; Secure;"
 
           router.push("/student/dashboard")
 
@@ -88,6 +82,9 @@ const handleInputChange = (e) => {
 
 
     <div className={styles.login_page}>
+      <Head>
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css"/>
+      </Head>
       <div className={styles.login_container}>
         <form onSubmit={UserLogin} className={styles.login_box}>
           

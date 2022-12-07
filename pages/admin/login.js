@@ -2,9 +2,11 @@ import styles from '../../styles/Login.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useUserContext } from '../../context/UserContext'
+import Head from 'next/head'
+import notie from 'notie'
 export default function Login() {
-    const { admin, setAdmin } = useUserContext();
-    const [err, setErr] = useState(null)
+    const { admin } = useUserContext();
+    const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
     const router = useRouter();
 
@@ -34,51 +36,28 @@ export default function Login() {
             body: JSON.stringify(values)
         }
 
-
-
-        console.log("I am ran")
         fetch("http://localhost:8081/admin/login", reqOptions)
             .then((response) => response.json())
             .then((response) => {
                 if (response.error) {
                     console.log("Error :", response.message)
-                    setErr("wrong password or email")
-                    // notie.alert({
-                    //   type: "error",
-                    //   message: response.error.message,
-                    //   position: "bottom",
-                    // })
+                    setError("wrong password or email")
+                    notie.alert({
+                        type: "error",
+                        text: response.error.message,
+                        position: "top",
+                    })
 
                 } else {
-                    var sanitisedUser = {
-                        ...response.data,
-                        accessLevel: 2
-                    }
-                    console.log("sanitised user", sanitisedUser)
-                    setUser(sanitisedUser)
-                    localStorage.setItem("admin", JSON.stringify(sanitisedUser))
-                    console.log("your data is : ", response)
+                    localStorage.setItem("admin", JSON.stringify(response.data))
+
                     // setToken(response.data.token.token)
                     // setUser(response.data.user)
-                    // notie.alert({
-                    //   type: 'success',
-                    //   message: "logged in successfully",
-                    //   position: "bottom",
-                    // })
-
-                    // save info to cookie
-                    // let date = new Date();
-                    // let expDays = 1;
-                    // date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-                    // const expires = "expires=" + date.toUTCString();
-
-                    // // set the cookie
-                    // document.cookie = "_site_data="
-                    //   + JSON.stringify(response.data)
-                    //   + "; "
-                    //   + expires
-                    //   + "; path=/; SameSite=strict; Secure;"
-
+                    notie.alert({
+                        type: 'success',
+                        text: "logged in successfully",
+                        position: "top",
+                    })
                     router.push("/admin/dashboard")
 
                 }
@@ -90,6 +69,9 @@ export default function Login() {
 
 
         <div className={styles.login_page}>
+            <Head>
+                <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css" />
+            </Head>
             <div className={styles.login_container}>
                 <form onSubmit={UserLogin} className={styles.login_box}>
                     <div className={styles.warning}>

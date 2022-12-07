@@ -3,16 +3,13 @@ import DasboardLeft from "../../component/DasboardLeft"
 import { useUserContext } from "../../context/UserContext"
 import { useEffect, useState } from "react"
 import Head from "next/head"
+import { getCourseByCode } from "../../constants/courses"
 
 const Profile = () => {
     const { user, feedbackData, setFeedbackData } = useUserContext()
-    console.log("Feedback user", user?.user.last_name)
     const [err, setErr] = useState(null)
     const [loading, setLoading] = useState(false)
 
-    const sanitisedData = {
-
-    }
     const FetchData = async () => {
         var reqOptions = {
             method: "POST",
@@ -63,9 +60,9 @@ const Profile = () => {
                                     return (
                                         <>
                                             <tr>
-                                                <th scope="row">{item+1}</th>
+                                                <td scope="row">{item+1}</td>
                                                 <td>{index}</td>
-                                                <td>Otto</td>
+                                                <td>{getCourseByCode(index)?.course_title}</td>
                                             </tr>
                                         </>
                                     )

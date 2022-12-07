@@ -1,4 +1,4 @@
-.dashboard_container, .feedback_container,.course_container,.setting_container {
+.dashboard_container, .feedback_container,.course_container,.setting_container, .anaylyze_course_container, .analyze_program_container, .read_feedback_container, .add_user_container {
     position: relative;
     width: 100vw;
     height: 92vh;
@@ -50,13 +50,17 @@
 .component_last:hover{
     background-color: aliceblue;
 }
-
+.right h1{
+    margin-bottom: 50px;
+}
 .right{
-    height: 200vh;
+
+    height: 120vh;
     flex: 4;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 /* .right p{
@@ -69,4 +73,29 @@
     width: 90%;
     height: 95%;
     /* background-color: rgb(238, 238, 238); */
+}
+
+.icon {
+    width: 130px;
+    height: 130px;
+    margin: 20px 10px;
+}
+.dashbaord_text{
+    margin-top: 50px ;
+}
+.dashbaord_text p{
+    padding-bottom: 10px;
+}
+.dashbaord_text span{
+    font-weight: 500;
+}
+.search_bar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
 }

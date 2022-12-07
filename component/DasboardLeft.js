@@ -7,9 +7,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useUserContext } from "../context/UserContext";
 import { useRouter } from "next/router";
+import notie from 'notie'
+import Head from "next/head";
 
 const DasboardLeft = () => {
-  const router= useRouter()
+  const router = useRouter()
   const { user, setUser } = useUserContext()
   let body = {
     token: user?.token.token
@@ -21,15 +23,26 @@ const DasboardLeft = () => {
       body: JSON.stringify(body)
     }
 
-    fetch("http://localhost:8081/studentlogout", reqOptions)
+    fetch("http://localhost:8081/student/logout", reqOptions)
       .then((response) => response.json())
-      .then((response)=>{
-        if(response.err){
-          console.log(response.err)
-        }else{
+      .then((response) => {
+        if (response.error) {
+
+          notie.alert({
+            type: 'error',
+            text: response.error,
+            position: "top",
+          })
+        } else {
           setUser(null)
           localStorage.removeItem("user")
+          notie.alert({
+            type: 1,
+            text: "logged out successfully",
+            position: "top",
+          })
           router.push("/")
+
         }
       })
 
@@ -38,6 +51,9 @@ const DasboardLeft = () => {
   return (
     <>
       <div className={styles.left}>
+        <Head>
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css" />
+        </Head>
         <div>
           <div className={styles.component}>
             <DashboardIcon />
@@ -57,9 +73,9 @@ const DasboardLeft = () => {
             <Link href="/student/account-setting">Account Setting</Link>
           </div>
         </div>
-        <div className={styles.component_last} onClick={()=>UserLogout()}>
-            <LogoutIcon />
-            <p>Logout</p>
+        <div className={styles.component_last} onClick={() => UserLogout()}>
+          <LogoutIcon />
+          <p>Logout</p>
         </div>
 
       </div>

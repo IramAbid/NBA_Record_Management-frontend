@@ -7,8 +7,9 @@ export const UserContextProvider = ({ children }) => {
     const [admin, setAdmin] = useState(null);
     const [feedbackData, setFeedbackData] = useState(null);
     const [dashboardStatus, setDashboardStatus]= useState(0)
-    
-    // const [signUpRequired, setSignUpRequired] = useState(false);
+    const sanitisedCOS= new Array(3).fill(0)
+    const sanitisedRating= new Array(5).fill(0)
+    const [additionalComment, setAdditionalComment]= useState("")
 
     useEffect(() => {
         const userParsed = JSON.parse(localStorage.getItem("user"));
@@ -40,8 +41,11 @@ export const UserContextProvider = ({ children }) => {
                 feedbackData,
                 setFeedbackData,
                 admin,
-                setAdmin
-
+                setAdmin,
+                sanitisedCOS,
+                sanitisedRating,
+                additionalComment,
+                setAdditionalComment
             }}
         >
             {children}
