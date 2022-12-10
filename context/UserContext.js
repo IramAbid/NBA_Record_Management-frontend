@@ -7,8 +7,8 @@ export const UserContextProvider = ({ children }) => {
     const [admin, setAdmin] = useState(null);
     const [feedbackData, setFeedbackData] = useState(null);
     const [dashboardStatus, setDashboardStatus]= useState(0)
-    const sanitisedCOS= new Array(3).fill(0)
-    const sanitisedRating= new Array(5).fill(0)
+    const sanitisedCOS= new Array(5)
+    const sanitisedRating= new Array(13).fill(5)
     const [additionalComment, setAdditionalComment]= useState("")
 
     useEffect(() => {

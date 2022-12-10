@@ -32,12 +32,27 @@ const AddFeedback = () => {
     const router = useRouter()
     const { code } = router.query
     const course = getCourseByCode(code)
-    const { user, sanitisedCOS, setAdditionalComment, additionalComment, sanitisedRating } = useUserContext()
-    const [rating, setRating] = useState([])
+    const { user} = useUserContext()
+    const [rating, setRating]= useState(0)
+    const [index,setIndex]= useState(0)
     const [generalRating, setGeneralRating] = useState([])
     const [hover, setHover] = useState(-1);
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [comment, setComment]= useState("")
+    // const [sanitisedRating, setSanitisedRating]= useState(new Array(13).fill(5))
+
+    const sanitisedRating= new Array(13).fill(5)
+
+
+    useEffect(()=>{
+        console.log("sanitised Rating", sanitisedRating)
+        console.log("current Index", index)
+        console.log("current Rating", rating)
+        sanitisedRating[index]= rating
+        console.log("sanitised Rating Updated", sanitisedRating)
+
+    },[rating,sanitisedRating,index])
 
     const SubmitForm = (e) => {
         e.preventDefault()
@@ -137,6 +152,7 @@ const AddFeedback = () => {
                                         value={rating[index]}
                                         onChange={(event, newValue) => {
                                             setRating(newValue);
+                                            console.log("index", index)
                                             sanitisedCOS[index] = newValue
 
                                         }}
@@ -170,10 +186,10 @@ const AddFeedback = () => {
                                     <Rating
                                         required
                                         name="hover-feedback controlled"
-                                        value={generalRating[index]}
+                                        value={rating[index]}
                                         onChange={(event, newValue) => {
-                                            setGeneralRating(newValue);
-                                            sanitisedRating[index] = newValue
+                                            setIndex(index)
+                                            setRating(newValue);
 
                                         }}
                                         onChangeActive={(event, newHover) => {
@@ -191,7 +207,7 @@ const AddFeedback = () => {
                         <p>Additional Comments:</p>
                     </div>
                     <div className={styles.comment_right}>
-                        <textarea name="addtionalComment" value={additionalComment} onChange={(e) => setAdditionalComment(e.target.value)} placeholder="Additional Comment"></textarea>
+                        <textarea name="addtionalComment" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Additional Comment"></textarea>
                     </div>
                 </div>
                 <div className={styles.submit}>
