@@ -1,32 +1,28 @@
 .my_navbar{
     position: sticky;
     top: 0;
-    width: 100%;
-    padding: 20px;
-    height: 75px;
-    color: beige;
-    background-color:rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 8vh;
+    background-color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left:30px;
-    font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0 20px;
+    z-index: 999 !important;
 }
-
 .my_navbar h3{
-    cursor: hand; 
+    cursor: pointer; 
 }
 .my_navbar h3:hover{
-    color:#bd524b;
+    opacity: .6;
 }
 .menubar{
-    font-size: 16px;
-    font-weight: 400;
-    padding-right: 30px;
-    display: inline-flex;
-    color: beige; 
-    gap: 40px;
+    font-size: 14px;
+    padding-right: 20px;
+    display: flex;
+    color: white; 
+    gap: 30px;
 }
 
 .menubar a{
@@ -34,9 +30,10 @@
     text-decoration: none;
 }
 .menubar a:hover{
-    color:#bd524b;
-    
+    opacity: .6;
 }
+
+
 @media screen and (max-width: 600px) {
     .menubar{
         display: none;

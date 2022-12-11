@@ -5,6 +5,13 @@
     align-items: center;
     padding-top: 30px;
     color:#bd524b;
+        background-image: url("/background4.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        
+
 }
 .hero_container h3{
     color:green;

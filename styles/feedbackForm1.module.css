@@ -1,0 +1,122 @@
+.container{
+    min-height: 100vh;
+    padding: 20px 40px;
+}
+.form_container p{
+    font-size: 10px;
+}
+.top{
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.info p{
+    font-size: 12px;
+
+}
+.form_container{
+    margin-top: 30px;
+}
+
+.header{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid gainsboro;
+    padding: 0 10px;
+}
+.header p{
+    font-size: 15px;
+}
+
+.header_mid{
+    padding: 0 10px;
+    flex:8
+}
+.header_right{
+    display: flex;
+    justify-content: center;
+    flex:2;
+    border-left: 2px solid gainsboro;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    background-color: gainsboro;
+}
+.component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gainsboro;
+    padding: 0 10px;
+}
+.component .left{
+    padding-right: 10px;
+    flex : 8;
+}
+.component .right{
+    border-left: 2px solid gainsboro;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex : 2;
+}
+.additional_comment{
+    display: flex;
+    padding: 10px;
+    border: 1px solid gainsboro;
+}
+
+.comment_left{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.comment_right{
+    flex: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.additional_comment textarea{
+    width: 100%;
+    height: 50px;
+    border: 1px solid gainsboro;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    background-color: gainsboro;
+}
+.submit input{
+    border: none;
+    padding: 5px 25px;
+    border-radius: 2px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    animation: all 0.5s ease;
+
+
+}
+.submit input:hover{
+
+    padding: 7px 35px;
+    
+}
