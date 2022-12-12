@@ -41,11 +41,11 @@ export default function ContactUs() {
              </div >
              <div className={styles.component} >
                 <EmailIcon/>
-                <p><strong>Email   :</strong> NBAmail@gmail.com</p>
+                <p><strong>Email   :</strong> nbamail@gmail.com</p>
              </div>
              <div className={styles.component}>
                 <WebsiteIcon/>
-                <p> <strong>Website  :</strong> NBA_RECORD.com</p>
+                <p> <strong>Website  :</strong> nba.zhcet.com</p>
              </div>
             </div>
 

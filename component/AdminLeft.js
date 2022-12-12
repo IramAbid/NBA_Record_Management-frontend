@@ -38,6 +38,7 @@ const DasboardLeft = () => {
           })
         } else {
           localStorage.removeItem("admin")
+          setAdmin(null)
           notie.alert({
             type: 'success',
             text: "logged out successfully",

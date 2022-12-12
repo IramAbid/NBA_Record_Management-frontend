@@ -1,7 +1,7 @@
 import styles from "../../styles/dashboard.module.css"
 import AdminLeft from "../../component/AdminLeft"
 import { useUserContext } from "../../context/UserContext"
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 import InputLabel from '@mui/material/InputLabel';
@@ -10,6 +10,10 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
+import { Chart } from "react-google-charts";
+
+
+
 
 const AnalyzeProgram = () => {
   const router = useRouter()
@@ -20,6 +24,44 @@ const AnalyzeProgram = () => {
   const [loading, setLoading] = useState(false)
   const [feedbacks, setFeedbacks] = useState(null)
   const [counter, setCounter] = useState(null)
+
+  const color = ["#b87333", "silver", "gold", "#e5e4e2", 'purple', 'red', 'green', 'yellow', 'orange', 'purple', "silver", "gold", "#e5e4e2", 'purple']
+
+  function getData(){
+    const allCourses = [
+      {
+        courseCode: "COC3080",
+        average: getAverage("COC3080"),
+      },
+      {
+        courseCode: "COC3090",
+        average: getAverage("COC3090"),
+      },
+      {
+        courseCode: "COC3100",
+        average: getAverage("COC3100"),
+      },
+      {
+        courseCode: "COC3930",
+        average: getAverage("COC3930"),
+      },
+      {
+        courseCode: "COC3950",
+        average: getAverage("COC3950"),
+      },
+      {
+        courseCode: "ELA3400",
+        average: getAverage("ELA3400"),
+      },
+      {
+        courseCode: "MEH3450",
+        average: getAverage("MEH3450"),
+      },
+    ]
+    return  allCourses
+  }
+
+  
 
   const handleChange = (event) => {
     setCourse(event.target.value);
@@ -50,6 +92,44 @@ const AnalyzeProgram = () => {
       setLoading(false)
     }
   }
+
+  function getAverage(id) {
+    var av1 = 0;
+    var av2 = 0;
+    var sum1 = 0;
+    var sum2 = 0;
+    var courseData = feedbacks.data.filter((course) => course.course_code === id);
+
+    if (courseData.length === 0) {
+      return 1;
+    } else {
+      for (var i = 0; i < courseData.length; i++) {
+
+        for (var j = 0; j < courseData[i].unit_feedback.length; j++) {
+          sum1 += courseData[i].unit_feedback[j];
+        }
+        for (var j = 0; j < 13; j++) {
+          sum2 += courseData[i].general_feedback[j];
+        }
+
+      }
+
+      av1 = sum1 / (courseData[0].unit_feedback.length * courseData.length);
+      av2 = sum2 / (13 * courseData.length);
+
+      return (av1 + av2) / 2;
+    }
+  }
+
+  function getRating() {
+    var data = [["Element", "Rating", { role: "style" }]]
+    for (var i = 0; i < 7; i++) {
+      data.push([`S${i + 1}`, getData()?.average, color[i]])
+    }
+    return data
+
+  }
+
   return (
     <div className={styles.analyze_program_container}>
       <AdminLeft />
@@ -66,9 +146,9 @@ const AnalyzeProgram = () => {
               label="Program"
             >
 
-              <MenuItem  value="B Tech">B Tech</MenuItem>
-              <MenuItem  value="M Tech">M Tech</MenuItem>
-              <MenuItem  value="BE">BE</MenuItem>
+              <MenuItem value="B Tech">B Tech</MenuItem>
+              <MenuItem value="M Tech">M Tech</MenuItem>
+              <MenuItem value="BE">BE</MenuItem>
 
             </Select>
           </FormControl>
@@ -78,15 +158,21 @@ const AnalyzeProgram = () => {
             </Button>
           </div>
         </div>
-        <div className={styles.data_table}>
-          {loading ? <div className={styles.loading}><h1>Loadding Data ...</h1></div> :
+        <div className={styles.bar_graph}>
+        {loading ? <div className={styles.loading}><h1>Loadding Data ...</h1></div> :
             <>
               {feedbacks?.data ?
                 <>
-                  {JSON.stringify(feedbacks)}
+                  <div className={styles.bargraph_content}>
+                    <div className={styles.bargraph_right}>
+                      <Chart chartType="ColumnChart" width="500px" height="300px" data={getRating()} />
+                    </div>
+
+                  </div>
                 </> :
                 <>
                   {counter && <h2>No data found</h2>}
+
                 </>}
             </>
           }

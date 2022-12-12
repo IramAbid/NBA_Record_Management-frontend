@@ -64,3 +64,11 @@
     display: block;
     margin-bottom: 10px;
 }
+
+.error_message p{
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+

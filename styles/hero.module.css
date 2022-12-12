@@ -4,12 +4,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    color:#bd524b;
-        background-image: url("/background4.jpg");
+    color:black;
+        background:  rgba(22,22,22,0.3)url('/background2.jpg');
+        background-blend-mode: darken; 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: fixed;   
         
 
 }
@@ -50,7 +51,6 @@
     color:white;
     padding:8px 25px;
     border-radius:20px;
-
 }
 .button_container a:hover{
     color:white;

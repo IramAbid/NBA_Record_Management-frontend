@@ -9,6 +9,14 @@ import { useEffect } from "react";
 import notie from 'notie'
 import Head from "next/head";
 
+// const labels = {
+//     1: '1',
+//     2: '2',
+//     3: '3',
+//     4: '4',
+//     5: '5',
+// };
+
 
 const GeneralRating = [
     "The teacher completes the entire syllabus in time.",
@@ -26,33 +34,33 @@ const GeneralRating = [
     "I have learnt and understood the subject material/s in this course."
 ]
 
+function getLabelText(value) {
+    return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
+}
+
 
 const AddFeedback = () => {
 
     const router = useRouter()
     const { code } = router.query
     const course = getCourseByCode(code)
-    const { user} = useUserContext()
-    const [rating, setRating]= useState(0)
-    const [index,setIndex]= useState(0)
-    const [generalRating, setGeneralRating] = useState([])
+    const { user } = useUserContext()
+    const [rating, setRating] = useState(new Array(13).fill(1))
+    const [cos, setCos] = useState(new Array(getCourseByCode(code)?.COS.length).fill(1))
     const [hover, setHover] = useState(-1);
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [comment, setComment]= useState("")
-    // const [sanitisedRating, setSanitisedRating]= useState(new Array(13).fill(5))
+    const [comment, setComment] = useState("")
+    const [sanitisedRating, setSanitisedRating] = useState(new Array(13).fill(5))
+    const [sanitisedCOS, setSanitisedCOS] = useState(new Array(getCourseByCode(code)?.COS.length).fill(5))
 
-    const sanitisedRating= new Array(13).fill(5)
 
 
-    useEffect(()=>{
-        console.log("sanitised Rating", sanitisedRating)
-        console.log("current Index", index)
-        console.log("current Rating", rating)
-        sanitisedRating[index]= rating
-        console.log("sanitised Rating Updated", sanitisedRating)
+    useEffect(() => {
+        console.log("rating", sanitisedRating)
+        console.log("COS", sanitisedCOS)
 
-    },[rating,sanitisedRating,index])
+    }, [sanitisedRating, rating])
 
     const SubmitForm = (e) => {
         e.preventDefault()
@@ -65,7 +73,7 @@ const AddFeedback = () => {
             branch: course.department,
             unit_feedback: sanitisedCOS,
             general_feedback: sanitisedRating,
-            additional_comment: additionalComment,
+            additional_comment: comment,
 
         }
         var reqOptions = {
@@ -109,7 +117,7 @@ const AddFeedback = () => {
             <div className={styles.top}>
                 <p>Student Feedback Form</p>
                 <div className={styles.info}>
-                    <p><strong>Course Code:</strong> {code}</p>
+                    <p ><strong>Course Code:</strong> {code}</p>
                     <p><strong>Course Title:</strong> {course?.course_title}</p>
                 </div>
                 <div className={styles.info}>
@@ -133,7 +141,11 @@ const AddFeedback = () => {
                             Outcomes (COs):I have an ability to:</strong></p>
                     </div>
                     <div className={styles.section_right}>
-
+                        <p><strong>1</strong></p>
+                        <p><strong>2</strong></p>
+                        <p><strong>3</strong></p>
+                        <p><strong>4</strong></p>
+                        <p><strong>5</strong></p>
                     </div>
 
                 </div>
@@ -148,12 +160,19 @@ const AddFeedback = () => {
                                 <div className={styles.right}>
                                     <Rating
                                         required
+                                        // getLabelText={getLabelText}
                                         name="hover-feedback controlled"
-                                        value={rating[index]}
+                                        value={cos[index]}
                                         onChange={(event, newValue) => {
-                                            setRating(newValue);
+                                            setCos(prev => {
+                                                prev[index] = newValue
+                                                return prev
+                                            });
                                             console.log("index", index)
-                                            sanitisedCOS[index] = newValue
+                                            setSanitisedCOS((prev) => {
+                                                prev[index] = newValue
+                                                return prev
+                                            })
 
                                         }}
                                         onChangeActive={(event, newHover) => {
@@ -188,8 +207,14 @@ const AddFeedback = () => {
                                         name="hover-feedback controlled"
                                         value={rating[index]}
                                         onChange={(event, newValue) => {
-                                            setIndex(index)
-                                            setRating(newValue);
+                                            setRating(prev => {
+                                                prev[index] = newValue
+                                                return prev
+                                            });
+                                            setSanitisedRating((prev) => {
+                                                prev[index] = newValue
+                                                return prev
+                                            })
 
                                         }}
                                         onChangeActive={(event, newHover) => {

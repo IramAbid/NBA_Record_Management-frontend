@@ -8,7 +8,7 @@ const Hero = () => {
             </div>
             <div>
                 <h3 classname="styles.amu">
-                    ALIGARH MUSLIM UNIVERSITY
+                    Zakir Husain College of Engineering and Technology
                 </h3>
             </div>
             <div className={styles.details}>
@@ -19,8 +19,7 @@ const Hero = () => {
             <div className={styles.button_container}>
                 <div><Link href="/student/login">STUDENTS</Link></div>
                 <div><Link href="/admin/login">ADMIN</Link></div>
-                <div><Link href="/student/feedback">FEEDBACK</Link></div>
-                <div><Link href="/helpdesk">HELPDESK</Link></div>
+                <div><Link href="/contact">HELPDESK</Link></div>
             </div>
 
         </div>

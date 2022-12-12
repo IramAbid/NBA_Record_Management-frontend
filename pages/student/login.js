@@ -18,6 +18,7 @@ export default function Login() {
   const {setUser, user}= useUserContext();
   const [loading, setLoading] = useState(false)
   const router= useRouter(); 
+  const [err, setErr] = useState(null)
 
   useEffect(()=>{
     if(user){
@@ -50,9 +51,10 @@ const handleInputChange = (e) => {
       .then((response) => {
         if (response.error) {
           console.log("Error :", response.message)
+          setErr(response.message)
           notie.alert({
             type: 3,
-            text: response.error.message,
+            text: response.message,
             position:"top"
           })
 
@@ -100,6 +102,7 @@ const handleInputChange = (e) => {
           <div className={styles.login_component_button}>
             <input type='submit' value="Login" />
           </div>
+          {err&&  <div className={styles.error_message}><p >{err}</p></div>}
         </form>
       </div>
     </div>

@@ -22,14 +22,12 @@ const Footer = () => {
                 </div>
             </div>
             <div className={styles.right}>
-                <div>
-                    <Link href="/feedback">Feedback</Link>
-                </div>
+                
                 <div>
                     <Link href="/useful-downloads">Useful Downloads</Link>
                 </div>
                 <div>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/contact">Contact Us</Link>
                 </div>
             </div>
         </footer>

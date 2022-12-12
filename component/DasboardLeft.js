@@ -62,7 +62,7 @@ const DasboardLeft = () => {
 
           <div className={styles.component}>
             <LibraryBooksIcon />
-            <Link href="/student/registered-courses">Regsitered Courses</Link>
+            <Link href="/student/registered-courses">Registered Courses</Link>
           </div>
           <div className={styles.component}>
             <FeedbackIcon />

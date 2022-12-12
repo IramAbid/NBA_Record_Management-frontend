@@ -7,13 +7,12 @@
     flex-direction: row;
 }
 .contactus_container p{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     color: #333;
     margin-bottom: 20px;
 }
 .contactus_form{
-    margin-top:30px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding: 10px;
     width: 25%;
@@ -84,44 +83,41 @@
     border-radius: 5px;
 }
 .contactus{
-    padding: 20px;
+    padding: 15px;
     width: 25%;
-    height:400px;
+    height:403px;
     display: flex;
     color:white;
     font-weight: 400;
     flex-direction: column;
     align-items: left;
+    /* justify-content: center; */
     background-color: rgb(0,0,0,0.7);
-    border-radius: 0px 8px 8px 8px;  
+    border-radius: 0px 8px 8px 0px;  
 }
 .contactus h4{
     margin-top: 40px;
     text-align: center;
     font-size: 20px;
     font-weight:450;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     color:white;
 }
 .component{
-    text-align: center;
-    font-size: 14px;
-    font-weight: 300;
-    padding:5px;
+    margin-top: 5px;
+    margin-left: 20px;
     display: flex;
-    flex-direction: row;
-    gap:4px;
+    gap: 5px;
     color:#bd524b;
-    justify-content: left;
-    margin-left: 50px;
 }
 
 .component strong{
     color: #bd524b;
     font-weight: 450;
+    font-size: 12px;
 }
 .component p{
-    font-size: small;
+    font-size: 12px;
     text-align: center;
     padding-top: 3.5px;
     color:whitesmoke;

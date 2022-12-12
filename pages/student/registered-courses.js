@@ -59,7 +59,7 @@ const Profile = () => {
                                 {feedbackData?.registered_courses.map((index,item) => {
                                     return (
                                         <>
-                                            <tr>
+                                            <tr key={item} >
                                                 <td scope="row">{item+1}</td>
                                                 <td>{index}</td>
                                                 <td>{getCourseByCode(index)?.course_title}</td>

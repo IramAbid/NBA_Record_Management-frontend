@@ -48,10 +48,21 @@
 
 .section{
     display: flex;
-    flex-direction: column;
-    padding: 10px;
+    align-items: center;
+    padding: 10px 10px;
     border: 1px solid gainsboro;
     background-color: gainsboro;
+}
+.section_left{
+    flex:8;
+}
+.section_right{
+    display: flex;
+    justify-content: center;
+    flex:2;
+    gap: 18px;
+    border-left: 2px solid gainsboro;
+
 }
 .component{
     display: flex;
@@ -78,6 +89,7 @@
     border: 1px solid gainsboro;
 }
 
+
 .comment_left{
     flex: 2;
     display: flex;
@@ -92,9 +104,14 @@
     align-items: center;
 }
 .additional_comment textarea{
+    font-size: 10px;
+    padding: 10px;
     width: 100%;
     height: 50px;
     border: 1px solid gainsboro;
+}
+.additional_comment textarea:focus{
+    outline: none;
 }
 .submit{
     display: flex;

@@ -60,7 +60,7 @@ useEffect(() => {
                                 {feedbackData?.feedbacks.map((index,item) => {
                                     return (
                                         <>
-                                            <tr>
+                                            <tr key={item}>
                                                 <td scope="row">{item+1}</td>
                                                 <td>{index}</td>
                                                 <td><a href={`/student/feedbacks/add/${index}`}> {getCourseByCode(index)?.course_title}</a></td>
