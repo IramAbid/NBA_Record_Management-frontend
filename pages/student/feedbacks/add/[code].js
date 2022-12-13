@@ -34,10 +34,6 @@ const GeneralRating = [
     "I have learnt and understood the subject material/s in this course."
 ]
 
-function getLabelText(value) {
-    return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
-}
-
 
 const AddFeedback = () => {
 

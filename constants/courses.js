@@ -1,4 +1,4 @@
-const COURSE_DATA= [
+ const COURSE_DATA= [
     {
         id:1,
         course_code:"COC3080",
@@ -110,3 +110,5 @@ export function getCourseByCode(id) {
 export function getTitleList() {
     return COURSE_DATA.map((course) => course.course_code);
 }
+
+export default COURSE_DATA

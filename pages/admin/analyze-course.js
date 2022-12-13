@@ -14,7 +14,6 @@ import Head from "next/head"
 import { Chart } from "react-google-charts";
 
 
-
 const GeneralRating = [
   "The teacher completes the entire syllabus in time.",
   "The teacher discusses topics and interacts in the class.",
@@ -168,11 +167,10 @@ const AnalyzeCourse = () => {
                     <div className={styles.bargraph_left}>
                       {getCourseByCode(course)?.COS.map((item, index) => {
                         return (
-                          <>
-                            <>
-                              <p> <strong>CO{index + 1} </strong> : {item}</p>
-                            </>
-                          </>
+                          <div key={index} className={styles.course_list}>
+                              <p key={index} className={styles.course_list}> <strong>CO{index + 1} </strong> : {item}</p>
+
+                          </div>
                         )
                       })}
                     </div>
@@ -185,9 +183,9 @@ const AnalyzeCourse = () => {
                     <div className={styles.bargraph_left}>
                       {GeneralRating?.map((item, index) => {
                         return (
-                          <>
+                          <div  key={index} className={styles.course_list_i} >
                             <p><strong>S{index + 1}</strong> : {item}</p>
-                          </>
+                          </div>
                         )
                       })}
                     </div>

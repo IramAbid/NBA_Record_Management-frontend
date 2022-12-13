@@ -132,3 +132,13 @@
 .bargraph_content p{
     font-size: 10px;
 }
+
+.course_list p{
+    margin-top: 15px;
+}
+.course_list_i{
+    margin-top:5px;
+}
+.analyze_program_container h3{
+    margin-bottom: 10px;
+}

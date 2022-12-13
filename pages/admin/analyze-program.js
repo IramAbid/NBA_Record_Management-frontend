@@ -3,7 +3,6 @@ import AdminLeft from "../../component/AdminLeft"
 import { useUserContext } from "../../context/UserContext"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
-
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -12,13 +11,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import { Chart } from "react-google-charts";
 
-
-
-
 const AnalyzeProgram = () => {
   const router = useRouter()
   const { admin } = useUserContext()
-
   const [course, setCourse] = useState('')
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -32,30 +27,37 @@ const AnalyzeProgram = () => {
       {
         courseCode: "COC3080",
         average: getAverage("COC3080"),
+        course_title:"Digital Electronics",
       },
       {
         courseCode: "COC3090",
         average: getAverage("COC3090"),
+        course_title:"Microprocessor theory and applications",
       },
       {
         courseCode: "COC3100",
         average: getAverage("COC3100"),
+        course_title:"Operating System",
       },
       {
         courseCode: "COC3930",
         average: getAverage("COC3930"),
+        course_title:"Algorithms and operating system lab",
       },
       {
         courseCode: "COC3950",
         average: getAverage("COC3950"),
+        course_title:"Minor Project Lab",
       },
       {
         courseCode: "ELA3400",
         average: getAverage("ELA3400"),
+        course_title:"Communication Engineering",
       },
       {
         courseCode: "MEH3450",
         average: getAverage("MEH3450"),
+        course_title:"Engineering Economy and Management",
       },
     ]
     return  allCourses
@@ -124,7 +126,7 @@ const AnalyzeProgram = () => {
   function getRating() {
     var data = [["Element", "Rating", { role: "style" }]]
     for (var i = 0; i < 7; i++) {
-      data.push([`S${i + 1}`, getData()?.average, color[i]])
+      data.push([getData()[i].courseCode, getData()[i]?.average, color[i]])
     }
     return data
 
@@ -158,14 +160,29 @@ const AnalyzeProgram = () => {
             </Button>
           </div>
         </div>
+        {feedbacks?.data && <h3> Feedbacks Filled: {feedbacks.data.length} </h3>}
         <div className={styles.bar_graph}>
         {loading ? <div className={styles.loading}><h1>Loadding Data ...</h1></div> :
             <>
               {feedbacks?.data ?
                 <>
                   <div className={styles.bargraph_content}>
+                  
+                  <div className={styles.bargraph_left}>
+                  
+                      {getData()?.map((item, index) => {
+                        return (
+                          <div key={index} className={styles.course_list}>
+                              
+                              <p  > <strong>{item.courseCode} </strong> : {item.course_title}</p>
+
+                          </div>
+                        )
+                      })}
+                    </div>
+
                     <div className={styles.bargraph_right}>
-                      <Chart chartType="ColumnChart" width="500px" height="300px" data={getRating()} />
+                      <Chart chartType="ColumnChart" width="500px" height="400px" data={getRating()} />
                     </div>
 
                   </div>
