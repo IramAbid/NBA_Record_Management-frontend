@@ -16,7 +16,6 @@ import PieChartIcon from '@mui/icons-material/PieChart';
 
 const DasboardLeft = () => {
   const router = useRouter()
-  const [error, setError] = useState(null)
   const { admin, setAdmin } = useUserContext()
   let body = {
     token: admin?.token.token
@@ -30,10 +29,10 @@ const DasboardLeft = () => {
     fetch("http://localhost:8081/admin/logout", reqOptions)
       .then((response) => response.json())
       .then((response) => {
-        if (response.err) {
+        if (response.error) {
           notie.alert({
             type: 'error',
-            text: response.err,
+            text: response.error,
             position: "top",
           })
         } else {
